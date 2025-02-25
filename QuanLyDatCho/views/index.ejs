@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách lịch đặt chỗ</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Danh sách lịch đặt chỗ</h1>
+
+    <a href="/new">➕ Thêm đặt chỗ mới</a>
+
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>customerName</th>
+                <th>date</th>
+                <th>time</th>
+                <th>status</th>
+                <th>Act</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% bookings.forEach(booking => { %>
+                <tr>
+                    <td><%= booking.id %></td>
+                    <td><%= booking.customerName %></td>
+                    <td><%= booking.date %></td>
+                    <td><%= booking.time %></td>
+                    <td class="status 
+                        <%= booking.status === 'Pending' ? 'pending' : '' %>
+                        <%= booking.status === 'Confirmed' ? 'confirmed' : '' %>
+                        <%= booking.status === 'Cancelled' ? 'cancelled' : '' %>">
+                        <%= booking.status %>
+                    </td>
+                    <td>
+                        <a href="/edit/<%= booking.id %>"> Sửa</a>
+                        <form action="/cancel/<%= booking.id %>" method="POST" style="display:inline;">
+                            <button type="submit-cancel"> Hủy</button>
+                        </form>
+
+                        <% if (booking.status === 'Pending') { %>
+                            <form action="/confirm/<%= booking.id %>" method="POST" style="display:inline;">
+                                <button type="submit-confirm"> Xác nhận</button>
+                            </form>
+                        <% } %>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

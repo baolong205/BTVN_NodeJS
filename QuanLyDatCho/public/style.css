@@ -1,0 +1,165 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Link "Thêm đặt chỗ mới" */
+a {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+/* Table Styling */
+table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #444;
+}
+
+/* Alternate Row Color */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Status Colors */
+.status.pending {
+    background-color: #FFD700; /* Vàng */
+    color: black;
+    font-weight: bold;
+}
+
+.status.confirmed {
+    background-color: #32CD32; /* Xanh lá */
+    color: white;
+    font-weight: bold;
+}
+
+.status.cancelled {
+    background-color: #FF6347; /* Đỏ */
+    color: white;
+    font-weight: bold;
+}
+
+/* Buttons */
+button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    margin: 2px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hủy Button */
+button[type="submit-cancel"] {
+    background-color: #dc3545; /* Đỏ */
+}
+
+button[type="submit-cancel"]:hover {
+    background-color: #c82333;
+}
+
+/* Xác Nhận Button */
+button[type="submit-confirm"] {
+    background-color: #28a745; /* Xanh lá */
+}
+
+button[type="submit-confirm"]:hover {
+    background-color: #218838;
+}
+
+/* Sửa Link */
+td a {
+    background-color: #17a2b8; /* Xanh dương nhạt */
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+}
+
+td a:hover {
+    background-color: #138496;
+}
+
+/* Tooltip (Hiển thị gợi ý khi hover vào nút) */
+button[title]:hover::after, a[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    top: -30px;
+    white-space: nowrap;
+}
+
+/* Hover Effect on Table Row */
+tr:hover {
+    background-color: #e8f4ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    table, th, td {
+        font-size: 14px;
+    }
+
+    a, button {
+        padding: 6px 8px;
+    }
+
+    table {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    table, th, td {
+        font-size: 12px;
+    }
+
+    a, button {
+        padding: 5px 7px;
+    }
+}
