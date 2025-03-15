@@ -1,0 +1,28 @@
+<%- include('../layouts/header'); -%>
+
+    <main class="container">
+        <h1>Edit Product</h1>
+
+        <form action="/products/update/<%= product._id %>" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="<%= product.name %>" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description"
+                    required><%= product.description %></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="image" class="form-label">Image URL</label>
+                <input type="text" class="form-control" id="image" name="image" value="<%= product.image %>">
+            </div>
+
+            <button type="submit" class="btn btn-success">Update</button>
+            <a href="/products" class="btn btn-secondary">Cancel</a>
+        </form>
+    </main>
+
+    <%- include('../layouts/footer'); -%>

@@ -9,3 +9,6 @@ function confirmDelete(btn) {
       });
   }
 }
+function redirectToEdit(productId) {
+  window.location.href = `/products/edit/${productId}`;
+}
