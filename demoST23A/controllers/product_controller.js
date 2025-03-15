@@ -4,6 +4,14 @@ class ProductController {
     const products = await Product.find({});
     res.render("products/index", { products });
   }
+  static async new(req, res) {
+    res.render("products/new");
+  }
+
+  static async create(req, res) {
+    res.render("products/new");
+  }
+
   static async delete(req, res) {
     let id = req.params.id;
     const product = await Product.deleteOne({ _id: id });
