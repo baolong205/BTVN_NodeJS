@@ -5,6 +5,7 @@ const ProductController = require("../controllers/product_controller");
 
 router.get("/", HomeController.index);
 router.get("/products", ProductController.index);
+router.get("/products/delete/:id", ProductController.delete);
 router.post("/:id", HomeController.index);
 
 module.exports = router;
