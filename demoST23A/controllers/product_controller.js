@@ -9,7 +9,13 @@ class ProductController {
   }
 
   static async create(req, res) {
-    res.render("products/new");
+    try {
+      let { name, description } = req.body;
+      const product = await Product.create({ name, description });
+      res.redirect("/products");
+    } catch (error) {
+      res.render("products/new");
+    }
   }
 
   static async delete(req, res) {
